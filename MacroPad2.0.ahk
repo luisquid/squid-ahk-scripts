@@ -121,6 +121,11 @@ switch switchIndex
     }
 return
 
+NumpadIns::
+    Send, ^{F9}
+return
+
+;MODE SELECTION  
 NumpadDel::
     switchIndex++
     if(switchIndex > 1)
