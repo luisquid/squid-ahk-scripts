@@ -7,6 +7,7 @@ SetWorkingDir %A_ScriptDir%
 ;1 - Stream functions
 
 switchIndex:=0
+toggleMic:= false
 
 NumpadHome::
 return
@@ -40,7 +41,7 @@ switch switchIndex
     {
         ;TEST
         case 0:
-            MsgBox, TEST CLEAR
+            MsgBox, TEST CLEARus
             return
        
         
@@ -123,6 +124,33 @@ return
 
 NumpadIns::
     Send, ^{F9}
+    
+    toggleMic := !toggleMic
+
+    if(toggleMic)
+    {
+        TrayTip Mic Toggle, Mic has been unmuted
+        Sleep 3000   ; Let it display for 3 seconds.
+        HideTrayTip()
+
+    }
+
+    else
+    {
+        TrayTip Mic Toggle, Mic has been muted
+        Sleep 3000   ; Let it display for 3 seconds.
+        HideTrayTip()
+    }
+    
+    ; Copy this function into your script to use it.
+    HideTrayTip() {
+        TrayTip  ; Attempt to hide it the normal way.
+        if SubStr(A_OSVersion,1,3) = "10." {
+            Menu Tray, NoIcon
+            Sleep 200  ; It may be necessary to adjust this sleep.
+            Menu Tray, Icon
+        }
+    }
 return
 
 ;MODE SELECTION  
