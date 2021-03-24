@@ -130,18 +130,16 @@ NumpadIns::
     if(toggleMic)
     {
         TrayTip Mic Toggle, Mic has been unmuted,20, 17
-        Sleep 3000   ; Let it display for 3 seconds.
-        HideTrayTip()
-
     }
 
     else
     {
         TrayTip Mic Toggle, Mic has been muted,20, 17
-        Sleep 3000   ; Let it display for 3 seconds.
-        HideTrayTip()
     }
     
+    Sleep 3000   ; Let it display for 3 seconds.
+    HideTrayTip()
+
     ; Copy this function into your script to use it.
     HideTrayTip() {
         TrayTip  ; Attempt to hide it the normal way.
