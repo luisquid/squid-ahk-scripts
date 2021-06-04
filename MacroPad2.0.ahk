@@ -82,7 +82,8 @@ switch switchIndex
         
         ;VOICEMEETER MIC MUTE (WORKS WITH VOICEMEETER MACRO BUTTONS)
         case 1: 
-            Send, ^{F9}
+            run, D:\_squidPrograms\obs-studio\bin\64bit\obs64.exe, D:\_squidPrograms\obs-studio\bin\64bit\
+            run, C:\Users\luisb\AppData\Local\Programs\streamlabels\StreamLabels.exe, C:\Users\luisb\AppData\Local\Programs\streamlabels
             return
         default:
             MsgBox, Default case. 
@@ -98,7 +99,7 @@ switch switchIndex
             Send, +{F4}
             return
         case 1: 
-            MsgBox, Stream Mode Key
+            run, D:\_squidPrograms\StreamlabsOBS\Streamlabs OBS\Streamlabs OBS.exe, D:\_squidPrograms\StreamlabsOBS\Streamlabs OBS
             return
         default:
             MsgBox, Default case. 
@@ -163,6 +164,10 @@ NumpadDel::
             MsgBox, Game Mode Activated
             return
         case 1: 
+            
+            
+            run, C:\Program Files\Logitech\LogiCapture\bin\LogiCapture.exe, C:\Program Files\Logitech\LogiCapture\bin
+            
             MsgBox, Stream Mode Activated
             return
     }
